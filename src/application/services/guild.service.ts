@@ -1,7 +1,7 @@
 import { injectable, inject } from 'tsyringe';
 import type { IGuildRepository } from '../../domain/interfaces/index.js';
 import { GuildEntity, SnowflakeId } from '../../domain/index.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
 import { NotFoundError } from '../errors/index.js';
 
 @injectable()

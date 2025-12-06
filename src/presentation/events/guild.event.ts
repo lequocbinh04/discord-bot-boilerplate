@@ -1,9 +1,9 @@
 import { Discord, On } from 'discordx';
 import { injectable, inject } from 'tsyringe';
 import type { Guild } from 'discord.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
-import type { ILogger } from '../../infrastructure/logging/index.js';
-import { GuildService } from '../../application/services/index.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
+import { GuildService } from '@application/services/index.js';
 
 @Discord()
 @injectable()

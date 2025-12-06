@@ -1,7 +1,7 @@
 import { injectable, inject } from 'tsyringe';
 import type { IUserRepository, IGuildRepository } from '../../domain/interfaces/index.js';
 import { UserEntity, SnowflakeId } from '../../domain/index.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
 import { NotFoundError } from '../errors/index.js';
 
 export interface UserWithGuild {

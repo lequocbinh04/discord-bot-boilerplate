@@ -1,15 +1,10 @@
 import { Discord, Slash, SlashOption } from 'discordx';
 import { injectable, inject } from 'tsyringe';
-import {
-  CommandInteraction,
-  EmbedBuilder,
-  ApplicationCommandOptionType,
-  User,
-} from 'discord.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
-import type { ILogger } from '../../infrastructure/logging/index.js';
-import { UserService } from '../../application/services/index.js';
-import { GuildService } from '../../application/services/index.js';
+import { CommandInteraction, EmbedBuilder, ApplicationCommandOptionType, User } from 'discord.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
+import { UserService } from '@application/services/index.js';
+import { GuildService } from '@application/services/index.js';
 
 @Discord()
 @injectable()

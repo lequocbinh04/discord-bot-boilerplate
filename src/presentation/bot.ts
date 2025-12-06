@@ -1,9 +1,9 @@
 import { injectable, inject } from 'tsyringe';
 import type { Client } from 'discordx';
-import { TOKENS } from '../infrastructure/container/tokens.js';
-import type { ILogger } from '../infrastructure/logging/index.js';
-import { ConfigService } from '../infrastructure/config/index.js';
-import { PrismaService } from '../infrastructure/database/index.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
+import { ConfigService } from '@infrastructure/config/index.js';
+import { PrismaService } from '@infrastructure/database/index.js';
 
 @injectable()
 export class Bot {

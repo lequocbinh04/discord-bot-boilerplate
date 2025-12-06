@@ -2,9 +2,9 @@ import { Discord, On } from 'discordx';
 import { injectable, inject } from 'tsyringe';
 import type { Interaction } from 'discord.js';
 import type { Client } from 'discordx';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
-import type { ILogger } from '../../infrastructure/logging/index.js';
-import { ApplicationError } from '../../application/errors/index.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
+import { ApplicationError } from '@application/errors/index.js';
 
 @Discord()
 @injectable()

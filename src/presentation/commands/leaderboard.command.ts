@@ -1,9 +1,9 @@
 import { Discord, Slash, SlashOption } from 'discordx';
 import { injectable, inject } from 'tsyringe';
 import { CommandInteraction, EmbedBuilder, ApplicationCommandOptionType } from 'discord.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
-import type { ILogger } from '../../infrastructure/logging/index.js';
-import { UserService } from '../../application/services/index.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
+import { UserService } from '@application/services/index.js';
+import { TOKENS } from '@infrastructure/index.js';
 
 @Discord()
 @injectable()
@@ -37,10 +37,7 @@ export class LeaderboardCommand {
     await interaction.deferReply();
 
     try {
-      const topUsers = await this.userService.getLeaderboard(
-        interaction.guildId,
-        limit ?? 10
-      );
+      const topUsers = await this.userService.getLeaderboard(interaction.guildId, limit ?? 10);
 
       if (topUsers.length === 0) {
         await interaction.editReply({
@@ -51,7 +48,8 @@ export class LeaderboardCommand {
 
       const leaderboardText = topUsers
         .map((user, index) => {
-          const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
+          const medal =
+            index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
           return `${medal} **${user.username}** - Level ${user.level} (${user.xp} XP)`;
         })
         .join('\n');

@@ -1,8 +1,8 @@
 import { Discord, Slash } from 'discordx';
 import { injectable, inject } from 'tsyringe';
 import { CommandInteraction } from 'discord.js';
-import { TOKENS } from '../../infrastructure/container/tokens.js';
-import type { ILogger } from '../../infrastructure/logging/index.js';
+import { TOKENS } from '@infrastructure/container/tokens.js';
+import type { ILogger } from '@infrastructure/logging/index.js';
 
 @Discord()
 @injectable()
