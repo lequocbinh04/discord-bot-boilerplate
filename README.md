@@ -87,11 +87,12 @@ pnpm start
 
 ## Available Commands
 
-| Command                | Description                 |
-| ---------------------- | --------------------------- |
-| `/ping`                | Check bot latency           |
-| `/user [target]`       | View user profile and stats |
-| `/leaderboard [limit]` | View server XP leaderboard  |
+| Command                          | Description                              |
+| -------------------------------- | ---------------------------------------- |
+| `/ping`                          | Check bot latency                        |
+| `/user [target]`                 | View user profile and stats              |
+| `/leaderboard [limit]`           | View server XP leaderboard               |
+| `/example-list [mode] [limit]`   | Demo paginated list (static or lazy)     |
 
 ## Scripts
 
