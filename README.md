@@ -4,17 +4,18 @@ A scalable Discord bot boilerplate using **Clean Architecture**, **SOLID princip
 
 ## Tech Stack
 
-| Category | Technology                |
-| -------- | ------------------------- |
-| Runtime  | Node.js 20+               |
-| Language | TypeScript 5.x            |
-| Discord  | discord.js v14 + discordx |
-| DI       | TSyringe                  |
-| ORM      | Prisma 5.x                |
-| Database | PostgreSQL                |
-| Logging  | Pino                      |
-| Config   | Zod                       |
-| Testing  | Vitest                    |
+| Category  | Technology                |
+| --------- | ------------------------- |
+| Runtime   | Node.js 20+               |
+| Language  | TypeScript 5.x            |
+| Discord   | discord.js v14 + discordx |
+| DI        | TSyringe                  |
+| ORM       | Prisma 5.x                |
+| Database  | PostgreSQL                |
+| Container | Docker                    |
+| Logging   | Pino                      |
+| Config    | Zod                       |
+| Testing   | Vitest                    |
 
 ## Architecture
 
@@ -40,7 +41,32 @@ src/
 
 ## Quick Start
 
-### 1. Clone and Install
+### Option 1: Docker (Recommended)
+
+The easiest way to run the bot is with Docker Compose:
+
+```bash
+# Clone the repository
+git clone https://github.com/lequocbinh04/discord-bot-boilerplate
+cd discord-bot-boilerplate
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your DISCORD_TOKEN and DISCORD_CLIENT_ID
+
+# Start the bot with PostgreSQL
+docker compose up -d
+
+# View logs
+docker compose logs -f bot
+
+# Stop the bot
+docker compose down
+```
+
+### Option 2: Manual Setup
+
+#### 1. Clone and Install
 
 ```bash
 git clone https://github.com/lequocbinh04/discord-bot-boilerplate
@@ -48,7 +74,7 @@ cd discord-bot-boilerplate
 pnpm install
 ```
 
-### 2. Configure Environment
+#### 2. Configure Environment
 
 ```bash
 cp .env.example .env
@@ -64,7 +90,7 @@ NODE_ENV=development
 LOG_LEVEL=debug
 ```
 
-### 3. Setup Database
+#### 3. Setup Database
 
 ```bash
 # Push schema to database
@@ -74,7 +100,7 @@ pnpm db:push
 pnpm db:migrate
 ```
 
-### 4. Run the Bot
+#### 4. Run the Bot
 
 ```bash
 # Development (with hot reload)
